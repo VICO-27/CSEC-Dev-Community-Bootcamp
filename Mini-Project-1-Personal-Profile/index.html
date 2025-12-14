@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+<div class="profile-card">
+    <div class="profile-container">
+        <div class="profile-text">
+
+            <h1 class="animated-name">Ashenafi Deresa</h1>
+            <p>
+                CSE Student @ ASTU | interested in web development.
+                I enjoy learning new tech and building small projects to improve my skills.
+            </p>
+       
+            <div class="social-contact-container">
+                    <!-- Social media -->
+                <div class="social-links">
+                    <a href="https://github.com/VICO-27" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/YourUsername" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+                        <!-- Contact button -->
+                <button id="contact-btn">Contact Me</button>
+            </div>
+        </div>
+
+        <div class="profile-image">
+            <img src="./profile-pic.jpg" alt="profile picture" width="200" height="200">
+        </div>
+    </div>
+</div>
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-btn">&times;</span>
+            <form action="/submit" method="post">
+                <div>
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" required><br><br>
+                </div>
+
+                <div>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required><br><br>
+                </div>
+
+                <div>
+                    <label for="message">Message</label><br>
+                    <textarea name="message" id="message" rows="4" required></textarea> <br><br>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+     </div>
+</div>
+
+<script>
+const modal = document.getElementById("contact-modal");
+const btn = document.getElementById("contact-btn");
+const closeBtn = document.getElementById("close-btn");
+
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+closeBtn.onclick = function() {
+    modal.style.display = "none";
+}
+
+// Close modal when clicking outside the modal-content
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
