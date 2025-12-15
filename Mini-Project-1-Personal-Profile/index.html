@@ -3,82 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 </head>
 <body>
-<div class="profile-card">
-    <div class="profile-container">
-        <div class="profile-text">
+    <!-- HEADER -->
+    <header class="header">
+        <a href="#home" class="logo" id="name">Ashenafi <span>Deresa</span></a>
+        <i class="bx bx-menu" id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-            <h1 class="animated-name">Ashenafi Deresa</h1>
-            <p>
-                CSE Student @ ASTU | interested in web development.
-                I enjoy learning new tech and building small projects to improve my skills.
-            </p>
-       
-            <div class="social-contact-container">
-                    <!-- Social media -->
-                <div class="social-links">
-                    <a href="https://github.com/VICO-27" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com/in/YourUsername" target="_blank"><i class="fab fa-linkedin"></i></a>
-                </div>
-                        <!-- Contact button -->
-                <button id="contact-btn">Contact Me</button>
+    <!-- HOME SECTION -->
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>Hi, It's <span>Ashenafi</span></h1> 
+            <h3>I'm a <span>Website Developer</span></h3>
+            <p id="homep">I design and build responsive, modern websites with a focus on user experience and clean code. I enjoy transforming ideas into interactive and engaging digital experiences that help clients achieve their goals.</p>
+
+            <div class="social-icon home-social">
+                <a href="#"><i class="bx bxl-github"></i></a>
+                <a href="#"><i class="bx bxl-linkedin"></i></a>
+                <a href="#"><i class="bx bxl-telegram"></i></a>
+            </div>
+
+            <div class="btn-group">
+                <a href="#" class="btn">Hire Me</a>
+                <a href="#" class="btn">Contact</a>
             </div>
         </div>
 
-        <div class="profile-image">
-            <img src="./profile-pic.jpg" alt="profile picture" width="200" height="200">
+        <div class="home-img">
+            <img src="./profile-pic.jpg" alt="profile image">
         </div>
-    </div>
-</div>
-    <div id="contact-modal" class="modal">
-        <div class="modal-content">
-            <span id="close-btn">&times;</span>
-            <form action="/submit" method="post">
-                <div>
-                    <label for="name">Name:</label><br>
-                    <input type="text" id="name" name="name" required><br><br>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="profile-pic.jpg" alt="profile">
+        </div>
+        <div class="about-content">
+            <h2>About <span>Me</span></h2>
+            <p>Hello! I'm Ashenafi, a passionate web developer with expertise in HTML, CSS, JavaScript, and modern frameworks like React. I focus on creating websites that are visually appealing, functional, and optimized for performance and accessibility.</p>
+            <a href="#" class="btn">Read More</a>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services" id="services">
+        <h2 class="heading">Services</h2>
+        <div class="services-container">
+            <div class="services-box">
+                <div class="services-info">
+                    <i class="bx bxs-devices"></i>
+                    <h4>Responsive Web Design</h4>
+                    <p>I create websites that adapt seamlessly to all devices, from desktop computers to tablets and mobile phones, ensuring an optimal user experience.</p>
                 </div>
+            </div>
 
-                <div>
-                    <label for="email">Email:</label><br>
-                    <input type="email" id="email" name="email" required><br><br>
+            <div class="services-box">
+                <div class="services-info">
+                    <i class="bx bx-code"></i>
+                    <h4>Frontend Development</h4>
+                    <p>I develop interactive and modern interfaces using HTML, CSS, JavaScript, and React, with a focus on usability, accessibility, and performance.</p>
                 </div>
+            </div>
 
-                <div>
-                    <label for="message">Message</label><br>
-                    <textarea name="message" id="message" rows="4" required></textarea> <br><br>
+            <div class="services-box">
+                <div class="services-info">
+                    <i class="bx bx-code-curly"></i>
+                    <h4>Backend Development</h4>
+                    <p>I implement secure and efficient server-side logic, work with databases, and build APIs to ensure your applications run smoothly and reliably.</p>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <button type="submit">Submit</button>
-            </form>
-     </div>
-</div>
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+        <form action="">
+            <div class="input-group">
+                <div class="input-box">
+                    <input type="text" placeholder="Full Name">
+                    <input type="text" placeholder="Email">
+                </div>
+                <div class="input-box">
+                    <input type="number" placeholder="Phone number">
+                </div>
+            </div>
+            <div class="input-group-2">
+                <textarea cols="30" rows="10" placeholder="Your Message"></textarea>
+                <input type="submit" value="Send Message" class="btn">
+            </div>
+        </form>
+    </section>
 
-<script>
-const modal = document.getElementById("contact-modal");
-const btn = document.getElementById("contact-btn");
-const closeBtn = document.getElementById("close-btn");
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="social-icon footer-social">
+            <a href="#"><i class="bx bxl-github"></i></a>
+            <a href="#"><i class="bx bxl-linkedin"></i></a>
+            <a href="#"><i class="bx bxl-telegram"></i></a>
+        </div>
 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
+        <ul class="list">
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
 
-closeBtn.onclick = function() {
-    modal.style.display = "none";
-}
+        <p class="copyright">
+            &copy; 2025 Ashenafi Deresa | All rights reserved.
+        </p>
+    </footer>
 
-// Close modal when clicking outside the modal-content
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
