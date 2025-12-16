@@ -1,0 +1,136 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* BODY */
+body {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #111;
+}
+
+.header h1 {
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+/* PROFILE SECTION (FLEXBOX) */
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    gap: 30px;
+}
+
+.profile-img img {
+    width: 200px;
+    border-radius: 50%;
+    display: block;
+}
+
+.profile-bio {
+    max-width: 500px;
+    text-align: left;
+}
+
+/* SKILLS SECTION (GRID) */
+.skills {
+    padding: 50px 20px;
+    background-color: #111;
+    text-align: center;
+}
+
+.skills h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.skill-card {
+    background-color: #00ff51;
+    color: #000;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* CONTACT SECTION */
+.contact {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.contact h2 {
+    margin-bottom: 20px;
+}
+
+.contact form {
+    max-width: 400px;
+    margin: auto;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.contact button {
+    padding: 12px;
+    width: 100%;
+    background-color: #00ff51;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* FOOTER */
+.footer {
+    background-color: #111;
+    text-align: center;
+    padding: 20px;
+}
+
+/* DISPLAY REQUIREMENT */
+.footer p {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+
+    .profile {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
