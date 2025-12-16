@@ -33,7 +33,7 @@ body {
     width: 100%;
     top: 0;
     left: 0;
-    padding: 2.5rem 12%;
+    padding: 2rem 12%;
     background: rgba(0,0,0,0.3);
     backdrop-filter: blur(10px);
     display: flex;
@@ -76,6 +76,33 @@ span {
     border-bottom: 3px solid var(--main-color);
     color: var(--main-color);
 }
+/* TYPING ANIMATION */
+.typing {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #00ff51;
+    width: 0;
+    animation:
+        typewriter 6s steps(8, end) infinite, /* faster typing */
+        blink 0.7s step-end infinite;
+}
+
+/* Type → pause → erase */
+@keyframes typewriter {
+    0%   { width: 0; }      /* start typing */
+    30%  { width: 8ch; }    /* fully typed (forward) */
+    50%  { width: 8ch; }    /* pause at full word */
+    80%  { width: 0; }      /* erase backward */
+    100% { width: 0; }      /* pause before restart */
+}
+
+/* Cursor blink */
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+
 
 /* SECTIONS */
 section {
@@ -88,14 +115,15 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 5rem;
-    flex-wrap: nowrap;
+    gap: 2rem;
+    flex-wrap: nowrap;  /* always stay in a row */
 }
 
 .home-content {
-    flex: 1;
-    text-align: left;
+    flex: 1 1 60%;   /* text takes up to 60% */
+    min-width: 200px; /* prevent it from getting too small */
 }
+
 
 .home-content h1 {
     font-size: 7rem;
@@ -113,16 +141,17 @@ section {
     font-size: 1.5rem;
 }
 .home-img {
-    flex: 1;
+    flex: 1 1 35%;   /* image takes up to 35% */
     display: flex;
     justify-content: flex-end;
+    min-width: 100px; /* image won’t shrink too much */
 }
 
 .home-img img {
     max-width: 100%;
+    height: auto;
     border-radius: 50%;
     box-shadow: 0 0 25px var(--main-color);
-    transition: 0.4s ease-in-out;
 }
 
 .home-img img:hover {
@@ -130,6 +159,19 @@ section {
                 0 0 50px var(--main-color),
                 0 0 100px var(--main-color);
 }
+
+@media screen and (max-width: 768px) {
+    .home-content {
+        flex: 1 1 65%;   /* text grows slightly */
+    }
+    .home-img {
+        flex: 1 1 30%;   /* image shrinks */
+    }
+    .home-img img {
+        max-width: 150px; /* small but stays on right */
+    }
+}
+
 
 /* HOME SOCIAL ICONS */
 .home .social-icon {
@@ -400,7 +442,8 @@ section {
 /* RESPONSIVE */
 @media screen and (max-width: 1024px) {
     html { font-size: 50%; }
-    .home, .about { flex-direction: column; text-align: center; }
+   
     .home-content, .about-content { align-items: center; text-align: center; }
     .home-img, .about-img { max-width: 60%; justify-content: center; }
 }
+ /*.home, .about { flex-direction: column; text-align: center; }*/
